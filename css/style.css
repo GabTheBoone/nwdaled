@@ -263,6 +263,9 @@ footer {
 }
 
 /* Section Styling */
+#gallery-mobile {
+    display: none;
+}
 #gallery {
     margin-top: 0;
     margin-bottom: 60px;
@@ -281,7 +284,7 @@ footer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-content: center;
-    align-items: center;
+
     max-width: 1200px;
 }
 
@@ -371,6 +374,14 @@ footer {
 
     p {
         font-size: 12px;
+    }
+
+    #gallery-mobile {
+        display: block;
+    }
+    
+    #gallery {
+        display: none;
     }
 
     .photo-box {

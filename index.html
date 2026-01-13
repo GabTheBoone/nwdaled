@@ -69,10 +69,50 @@
 
     <section id="gallery" class="section" style=" padding-top: 0;">
         <h3 id = 'gallery_title'>Watercolors</h3>
-        <div class="photo-flex-container" id = "acrylics" style="display: none;"></div>
-        <div class="photo-flex-container" id = "watercolors"></div>
-        <div class="photo-flex-container" id = "digital" style="display: none;"></div>
-        <div class="photo-flex-container" id = "others" style="display: none;"></div>
+        <div class="photo-flex-container" id = "acrylics" style="display: none;">
+            <div class="photo-column" id="acrylicsc1"></div>
+            <div class="photo-column" id="acrylicsc2"></div>
+            <div class="photo-column" id="acrylicsc3"></div>
+        </div>
+        <div class="photo-flex-container" id = "watercolors">
+            <div class="photo-column" id="watercolorsc1"></div>
+            <div class="photo-column" id="watercolorsc2"></div>
+            <div class="photo-column" id="watercolorsc3"></div>
+        </div>
+        <div class="photo-flex-container" id = "digital" style="display: none;">
+            <div class="photo-column" id="digitalc1"></div>
+            <div class="photo-column" id="digitalc2"></div>
+            <div class="photo-column" id="digitalc3"></div>
+        </div>
+        <div class="photo-flex-container" id = "others" style="display: none;">
+            <div class="photo-column" id="othersc1"></div>
+            <div class="photo-column" id="othersc2"></div>
+            <div class="photo-column" id="othersc3"></div>
+        </div>
+    </section>
+
+    <section id="gallery-mobile" class="section" style=" padding-top: 0;">
+        <h3 id = 'gallery_title'>Watercolors</h3>
+        <div class="photo-flex-container" id = "acrylicsm" style="display: none;">
+            <div class="photo-column" id="acrylicsc1m"></div>
+            <div class="photo-column" id="acrylicsc2m"></div>
+
+        </div>
+        <div class="photo-flex-container" id = "watercolorsm">
+            <div class="photo-column" id="watercolorsc1m"></div>
+            <div class="photo-column" id="watercolorsc2m"></div>
+
+        </div>
+        <div class="photo-flex-container" id = "digitalm" style="display: none;">
+            <div class="photo-column" id="digitalc1m"></div>
+            <div class="photo-column" id="digitalc2m"></div>
+
+        </div>
+        <div class="photo-flex-container" id = "othersm" style="display: none;">
+            <div class="photo-column" id="othersc1m"></div>
+            <div class="photo-column" id="othersc2m"></div>
+
+        </div>
     </section>
 
 
@@ -107,6 +147,9 @@
 const title = document.getElementById("gallery_title");
 
 const acrylics = document.getElementById("acrylics");
+const acrylicsc1 = document.getElementById("acrylicsc1");
+const acrylicsc2 = document.getElementById("acrylicsc2");
+const acrylicsc3 = document.getElementById("acrylicsc3");
 const acryliccount = 4;
 for (let i = 1; i <= acryliccount; i++) {
     const wrapper = document.createElement("div");
@@ -116,10 +159,19 @@ for (let i = 1; i <= acryliccount; i++) {
     img.src = `images/acrylic${i}.jpg`;
     img.alt = `Painting ${i}`;
     wrapper.appendChild(img);
-    acrylics.appendChild(wrapper);
+    if (i % 3 == 1) {
+        acrylicsc1.appendChild(wrapper);
+    }else if(i % 3 == 2){
+        acrylicsc2.appendChild(wrapper);
+    }else {
+        acrylicsc3.appendChild(wrapper);
+    }
 }
 
 const watercolors = document.getElementById("watercolors");
+const watercolorsc1 = document.getElementById("watercolorsc1");
+const watercolorsc2 = document.getElementById("watercolorsc2");
+const watercolorsc3 = document.getElementById("watercolorsc3");
 const watercolorcount = 14;
 for (let i = 1; i <= watercolorcount; i++) {
     const wrapper = document.createElement("div");
@@ -129,10 +181,19 @@ for (let i = 1; i <= watercolorcount; i++) {
     img.src = `images/watercolor${i}.jpg`;
     img.alt = `Painting ${i}`;
     wrapper.appendChild(img);
-    watercolors.appendChild(wrapper);
+    if (i % 3 == 1) {
+        watercolorsc1.appendChild(wrapper);
+    }else if(i % 3 == 2){
+        watercolorsc2.appendChild(wrapper);
+    }else {
+        watercolorsc3.appendChild(wrapper);
+    }
 }
 
 const digital = document.getElementById("digital");
+const digitalc1 = document.getElementById("digitalc1");
+const digitalc2 = document.getElementById("digitalc2");
+const digitalc3 = document.getElementById("digitalc3");
 const digitalcount = 0;
 for (let i = 1; i <= digitalcount; i++) {
     const wrapper = document.createElement("div");
@@ -142,10 +203,20 @@ for (let i = 1; i <= digitalcount; i++) {
     img.src = `images/digital${i}.jpg`;
     img.alt = `Painting ${i}`;
     wrapper.appendChild(img);
-    digital.appendChild(wrapper);
+    if (i % 3 == 1) {
+        digitalc1.appendChild(wrapper);
+    }else if(i % 3 == 2){
+        digitalc2.appendChild(wrapper);
+    }else {
+        digitalc3.appendChild(wrapper);
+    }
+
 }
 
 const others = document.getElementById("others");
+const othersc1 = document.getElementById("othersc1");
+const othersc2 = document.getElementById("othersc2");
+const othersc3 = document.getElementById("othersc3");
 const othercount = 6;
 for (let i = 1; i <= othercount; i++) {
     const wrapper = document.createElement("div");
@@ -155,9 +226,89 @@ for (let i = 1; i <= othercount; i++) {
     img.src = `images/others${i}.png`;
     img.alt = `Painting ${i}`;
     wrapper.appendChild(img);
-    others.appendChild(wrapper);
+    if (i % 3 == 1) {
+        othersc1.appendChild(wrapper);
+    }else if(i % 3 == 2){
+        othersc2.appendChild(wrapper);
+    }else {
+        othersc3.appendChild(wrapper);
+    }
 }
 
+const acrylicsm = document.getElementById("acrylicsm");
+const acrylicsc1m = document.getElementById("acrylicsc1m");
+const acrylicsc2m = document.getElementById("acrylicsc2m");
+
+for (let i = 1; i <= acryliccount; i++) {
+    const wrapper = document.createElement("div");
+    wrapper.className = "photo-box";
+
+    const img = document.createElement("img");
+    img.src = `images/acrylic${i}.jpg`;
+    img.alt = `Painting ${i}`;
+    wrapper.appendChild(img);
+    if (i % 2 == 1) {
+        acrylicsc1.appendChild(wrapper);
+    }else {
+        acrylicsc2.appendChild(wrapper);
+    }
+}
+
+const watercolorsm = document.getElementById("watercolorsm");
+const watercolorsc1m = document.getElementById("watercolorsc1m");
+const watercolorsc2m = document.getElementById("watercolorsc2m");
+for (let i = 1; i <= watercolorcount; i++) {
+    const wrapper = document.createElement("div");
+    wrapper.className = "photo-box";
+
+    const img = document.createElement("img");
+    img.src = `images/watercolor${i}.jpg`;
+    img.alt = `Painting ${i}`;
+    wrapper.appendChild(img);
+    if (i % 2 == 1) {
+        watercolorsc1m.appendChild(wrapper);
+    }else {
+        watercolorsc2m.appendChild(wrapper);
+    }
+}
+
+const digitalm = document.getElementById("digitalm");
+const digitalc1m = document.getElementById("digitalc1m");
+const digitalc2m = document.getElementById("digitalc2m");
+for (let i = 1; i <= digitalcount; i++) {
+    const wrapper = document.createElement("div");
+    wrapper.className = "photo-box";
+
+    const img = document.createElement("img");
+    img.src = `images/digital${i}.jpg`;
+    img.alt = `Painting ${i}`;
+    wrapper.appendChild(img);
+    if (i % 2 == 1) {
+        digitalc1m.appendChild(wrapper);
+    }else {
+        digitalc2m.appendChild(wrapper);
+    }
+
+}
+
+const othersm = document.getElementById("othersm");
+const othersc1m = document.getElementById("othersc1m");
+const othersc2m = document.getElementById("othersc2m");
+
+for (let i = 1; i <= othercount; i++) {
+    const wrapper = document.createElement("div");
+    wrapper.className = "photo-box";
+
+    const img = document.createElement("img");
+    img.src = `images/others${i}.png`;
+    img.alt = `Painting ${i}`;
+    wrapper.appendChild(img);
+    if (i % 2 == 1) {
+        othersc1m.appendChild(wrapper);
+    }else {
+        othersc2m.appendChild(wrapper);
+    }
+}
 
 function capitalizeFirstLetter(str) {
     // Handle empty or non-string inputs gracefully
