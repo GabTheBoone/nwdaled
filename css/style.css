@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: 'Blanka';
-    src: url('fonts/BLANKA-REGULAR.OTF') format('opentype');
+    src: url('/fonts/BLANKA-REGULAR.OTF') format('opentype');
     font-weight: normal;
     font-style: normal;
     
@@ -10,7 +10,7 @@
 
 @font-face {
     font-family: 'Gendy';
-    src: url('fonts/GENDY.OTF') format('opentype');
+    src: url('/fonts/GENDY.OTF') format('opentype');
     font-weight: normal;
     font-style: normal;
     
