@@ -1,0 +1,397 @@
+@font-face {
+    font-family: 'Blanka';
+    src: url('fonts/BLANKA-REGULAR.OTF') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    
+}
+
+@font-face {
+    font-family: 'Gendy';
+    src: url('fonts/GENDY.OTF') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    
+}
+
+h2, h3 {
+    font-family: 'Gendy', sans-serif;
+    letter-spacing: 2px;
+}
+h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+h3 {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+}
+p{
+    font-family: 'Lato', sans-serif;
+}
+/* Global Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+.section {
+    padding: 50px 20px;
+    text-align: center;  
+}
+
+/* Navbar Styling */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(100, 100, 100, 0.8);
+    color: black;
+    z-index: 1000;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.navbar .nav-logo {
+    font-family: 'Blanka', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    margin-top: -9px;
+    letter-spacing: 1px;
+}
+
+.navbar .nav-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.navbar .nav-button {
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    background: transparent;
+    color: #fff;
+    text-align: center;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-family: 'lato', sans-serif;
+}
+
+.navbar .nav-button:hover {
+    background: rgba(250, 250, 250);
+    color: #000;
+}
+
+/* Landing Section */
+#landing {
+    height: 79vh;
+    color: white;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    text-align: left;
+}
+
+#landing h1 {
+    font-size: 5em;
+    font-weight: 900;
+    margin-bottom: 10px;
+    font-family: 'Gendy', sans-serif;
+    letter-spacing: 2px;
+}
+
+#landing p {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-family: 'lato', sans-serif;
+}
+
+button, #contact-me button {
+    font-size: 16px;
+    position: relative;
+    margin-top: 30px;
+    padding: 1em 2.5em 1em 2.5em;
+    border: none;
+    background: #fff;
+    transition: all 0.1s linear;
+    box-shadow: 0 0.4em 1em rgba(0, 0, 0, 0.1);
+}
+   
+   button:active {
+    transform: scale(0.95);
+   }
+   
+   button span {
+    color: #464646;
+    
+   }
+   
+   button .border {
+    position: absolute;
+    border: 0.15em solid #fff;
+   
+    transition: all 0.3s 0.08s linear;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+   }
+   
+   button:hover .border {
+    display: block;
+    width: 105%;
+    height: 115%
+   }
+   
+   .full-rounded {
+    border-radius: 2em;
+   }
+   
+
+
+/* About Section */
+#about {
+    background: #f4f4f4;
+    color: #333;
+}
+
+
+
+
+/* Contact Section */
+#contact {
+    background: #f4f4f4;
+    color: #333;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: white;
+}
+
+/* Photo Showcase Grid */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.photo-item img {
+    max-width: 100%;
+    max-height: 300px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.photo-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Contact Icons */
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.contact-icons a {
+    text-decoration: none;
+    position: relative; /* To position the tooltip */
+}
+
+.contact-icons img {
+    width: 40px; /* Size of the social media images */
+    height: 40px; /* Size of the social media images */
+    transition: transform 0.3s ease; /* Smooth transform effect */
+}
+
+.contact-icons img:hover {
+    transform: scale(1.1); /* Slightly scale the image on hover */
+}
+
+/* Tooltip Styling */
+.contact-icons a[title]:hover::after {
+    content: attr(title); /* Display the content of the title attribute */
+    position: absolute;
+    bottom: 120%; /* Position the tooltip above the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333; /* Dark background for tooltip */
+    color: white; /* White text for tooltip */
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 10; /* Ensure the tooltip appears above the image */
+    font-family: 'Lato', sans-serif;
+}
+
+/* Section Styling */
+#gallery {
+    margin-top: 0;
+    margin-bottom: 60px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+#gallery h2 {
+    margin-bottom: 60px;
+    font-size: 2rem;
+    color: #333;
+}
+
+/* Flex Container */
+.photo-flex-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+}
+
+/* Photo Box Styling */
+.photo-box {
+    flex: 1;
+    max-width: 80%;
+    display: flex;
+    flex-direction: column; /* Arrange image and title vertically */
+    align-items: center;
+    overflow: hidden; /* Clip any overflowing content */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff; /* Background for the box */
+    padding: 30px;
+    background: #e3e3e3;
+    margin-top: 5%;
+}
+
+.photo-box img {
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 5px solid #333;
+}
+
+/*.photo-title {
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    font-family: 'Gendy', sans-serif;
+}*/
+
+
+/* Modal Content Styling 
+.modal-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 80%;
+    background-color: #dbdbdb;
+    margin: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Left Side: Photo 
+.modal-left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 10px;
+}
+
+.modal-photo {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+}
+
+/* Right Side: Description 
+.modal-right {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #dbdbdb;
+}
+
+.modal-right p {
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.modal-right .close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    align-self: flex-end;
+    color: #dbdbdb;
+    text-decoration: none;
+    font-size: 18px;
+    border: none;
+    background: rgba(0,0,0,0.8);
+    cursor: pointer;    
+    padding: 10px;
+
+}
+
+.modal-right .close-modal:hover {
+    color: black;
+    background: #fff;
+} 
+    
+/* Modal Styles 
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.modal:target {
+    display: flex;
+}*/

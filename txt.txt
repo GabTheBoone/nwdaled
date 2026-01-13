@@ -1,0 +1,44 @@
+const watercolors = document.getElementById("watercolors");
+
+const watercolorcount = 4;
+for (let i = 1; i <= watercolorcount; i++) {
+    const wrapper = document.createElement("div");
+    wrapper.className = "photo-box";
+
+    const img = document.createElement("img");
+    img.src = `images/watercolor${i}.jpg`;
+    img.alt = `Painting ${i}`;
+    wrapper.appendChild(img);
+    gallery.appendChild(wrapper);
+}
+
+const digital = document.getElementById("digital");
+
+const digitalcount = 0;
+for (let i = 1; i <= digitalcount; i++) {
+    const wrapper = document.createElement("div");
+    wrapper.className = "photo-box";
+
+    const img = document.createElement("img");
+    img.src = `images/digital${i}.jpg`;
+    img.alt = `Painting ${i}`;
+    wrapper.appendChild(img);
+    gallery.appendChild(wrapper);
+}
+
+const others = document.getElementById("others");
+const othercount = 6;
+for (let i = 1; i <= othercount; i++) {
+    const wrapper = document.createElement("div");
+    wrapper.className = "photo-box";
+
+    const img = document.createElement("img");
+    img.src = `images/others${i}.jpg`;
+    img.alt = `Painting ${i}`;
+    wrapper.appendChild(img);
+    gallery.appendChild(wrapper);
+}
+
+        <div class="photo-flex-container" id = "watercolors" style="display: none;"></div>
+        <div class="photo-flex-container" id = "digital" style="display: none;"></div>
+        <div class="photo-flex-container" id = "others" style="display: none;"></div>
