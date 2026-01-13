@@ -372,6 +372,14 @@ footer {
     p {
         font-size: 12px;
     }
+
+    .photo-box {
+        padding: 15px;
+    }
+    
+    .photo-box img{
+        border: 3px solid #333;
+    }
 }
 
 /*.photo-title {
