@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NWDaleD</title>
+    <title>Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
 
@@ -26,20 +25,57 @@
         <div class="container">
             <a href="#landing" class="nav-logo">NW DaleD</a>
             <div class="nav-buttons">
-                <div class="nav-button" onclick="location.href='about.html'" >About Me</div>
-                <div class="nav-button" onclick="location.href='gallery.html'" >Gallery</div>
-                <div class="nav-button" onclick="location.href='index.html #contact'" style="margin-right: 10px;" >Contacts</div>
+                <div class="nav-button" onclick="location.href='#landing'" id="homebutton">Home</div>
+                <div class="nav-button" onclick="location.href='#portfolio'">Portfolio</div>
+                <div class="nav-button" onclick="location.href='#contact'" style="margin-right: 30px;">Contact Me</div>
             </div>
         </div>
     </nav>
 
     <section id="landing" class="section" style="background-repeat: no-repeat; background-size:100%;">
         <div class="landing-content">
-            <h1>nwdaled</h1>
-            <p>Welcome! Welcome!</p>
-            <p style="font-size: 16px;">an artist based in The Philippines who mostly work with traditional mediums such as watercolor and acrylics</p>
+            <h1>NW DALED</h1>
+            <p>Artist (Self Proclaimed) | Photographer (Self Proclaimed) | Computer Engineer (I actually have degree)</p>
+            <p>Welcome to my website/portfolio</p>
+            <button class="full-rounded" onclick="location.href='#about'">
+                <span style="font-weight: 600;">Click Click</span>
+                <div class="border full-rounded"></div>
+            </button>
         </div>
     </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2>About Myself</h2>
+        <p>I try to draw stuff I find pretty.</p>
+        <p>Also I'm Filipino (RIP), I draw (sometimes), and I made this portfolio from scratch (Imagine actually using my degree)</p>
+
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="section" style=" padding-top: 10px;">
+        <h2>Art Portfolio</h2>
+        <nav class="navbar" style="position:static; margin-left: -20px;">
+            <div class="container" style=" display: block; align-content: center;">
+                <div class="nav-buttons" style="align-items: center; justify-content: center;" >
+                    <div class="nav-button" onclick="myFunction('watercolors')">Watercolors</div>
+                    <div class="nav-button" onclick="myFunction('acrylics')">Acrylics</div>
+                    <div class="nav-button" onclick="myFunction('digital')">Digital</div>
+                    <div class="nav-button" onclick="myFunction('others')">Others</div>
+                </div>
+            </div>
+        </nav>
+    </section>
+
+    <section id="gallery" class="section" style=" padding-top: 0;">
+        <h3 id = 'gallery_title'>Acrylics</h3>
+        <div class="photo-flex-container" id = "acrylics">
+        </div>
+        <div class="photo-flex-container" id = "watercolors" style="display: none;"></div>
+        <div class="photo-flex-container" id = "digital" style="display: none;"></div>
+        <div class="photo-flex-container" id = "others" style="display: none;"></div>
+    </section>
+
 
     <section id="contact" class="section">
         <h2>Contact Me</h2>
@@ -67,92 +103,6 @@
         </div>
     </section>
 </body>
-
-<script>
-const title = document.getElementById("gallery_title");
-
-const acrylics = document.getElementById("acrylics");
-const acryliccount = 4;
-for (let i = 1; i <= acryliccount; i++) {
-    const wrapper = document.createElement("div");
-    wrapper.className = "photo-box";
-
-    const img = document.createElement("img");
-    img.src = `images/acrylic${i}.jpg`;
-    img.alt = `Painting ${i}`;
-    wrapper.appendChild(img);
-    acrylics.appendChild(wrapper);
-}
-
-const watercolors = document.getElementById("watercolors");
-const watercolorcount = 14;
-for (let i = 1; i <= watercolorcount; i++) {
-    const wrapper = document.createElement("div");
-    wrapper.className = "photo-box";
-
-    const img = document.createElement("img");
-    img.src = `images/watercolor${i}.jpg`;
-    img.alt = `Painting ${i}`;
-    wrapper.appendChild(img);
-    watercolors.appendChild(wrapper);
-}
-
-const digital = document.getElementById("digital");
-const digitalcount = 0;
-for (let i = 1; i <= digitalcount; i++) {
-    const wrapper = document.createElement("div");
-    wrapper.className = "photo-box";
-
-    const img = document.createElement("img");
-    img.src = `images/digital${i}.jpg`;
-    img.alt = `Painting ${i}`;
-    wrapper.appendChild(img);
-    digital.appendChild(wrapper);
-}
-
-const others = document.getElementById("others");
-const othercount = 6;
-for (let i = 1; i <= othercount; i++) {
-    const wrapper = document.createElement("div");
-    wrapper.className = "photo-box";
-
-    const img = document.createElement("img");
-    img.src = `images/others${i}.png`;
-    img.alt = `Painting ${i}`;
-    wrapper.appendChild(img);
-    others.appendChild(wrapper);
-}
-
-
-function capitalizeFirstLetter(str) {
-    // Handle empty or non-string inputs gracefully
-    if (!str || typeof str !== 'string') {
-        return '';
-    }
-    
-    return str.charAt(0).toUpperCase() + str.slice(1);
-}
-
-function myFunction(a) {
-    var b = capitalizeFirstLetter(a);
-    var x = document.getElementById(a);
-    var c = document.getElementById("acrylics");
-    var d = document.getElementById("watercolors");
-    var e = document.getElementById("digital");
-    var f = document.getElementById("others");
-    if (x.style.display === "none") {
-        c.style.display = "none";
-        d.style.display = "none";
-        e.style.display = "none";
-        f.style.display = "none";
-        x.style.display = "grid";
-        title.innerText = b;
-        window.location.href = "#" + a;
-    } else {
-        x.style.display = "none";
-    }
-}
-</script>
 
 <script>
 const title = document.getElementById("gallery_title");
