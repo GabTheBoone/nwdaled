@@ -44,7 +44,7 @@ body, html {
 }
 
 /* Navbar Styling */
-.navbar {
+.navbar, .navbar2 {
     position: fixed;
     top: 0;
     width: 100%;
@@ -53,14 +53,16 @@ body, html {
     z-index: 1000;
     padding: 10px 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    max-height: 7%;
 }
 
-.navbar .container {
+.navbar .container, .navbar2 .container2{
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+
 }
 
 .navbar .nav-logo {
@@ -73,12 +75,13 @@ body, html {
     letter-spacing: 1px;
 }
 
-.navbar .nav-buttons {
+.navbar .nav-buttons, .navbar2 .nav-buttons2 {
     display: flex;
     gap: 15px;
+
 }
 
-.navbar .nav-button {
+.navbar .nav-button, .navbar2 .nav-button2{
     padding: 10px 15px;
     border-radius: 8px;
     cursor: pointer;
@@ -88,9 +91,15 @@ body, html {
     font-size: 1rem;
     transition: all 0.3s ease;
     font-family: 'lato', sans-serif;
+    justify-content: center;
+    align-items: center;
 }
 
-.navbar .nav-button:hover {
+.navbar #burger {
+    display: none;
+}
+
+.navbar .nav-button:hover, .navbar2 .nav-button2:hover{
     background: rgba(250, 250, 250);
     color: #000;
 }
@@ -304,13 +313,14 @@ footer {
 @media (max-width: 768px) {
     .navbar .container {
         flex-direction: row;
-        align-items: flex-start;
+        align-items: center;
         gap: 10px;
     }
 
     .navbar .nav-buttons {
         flex-direction: row;
-        width: 100%;
+        width: 70%;
+        justify-content: end;
     }
 
     .navbar .nav-button {
@@ -325,6 +335,14 @@ footer {
     }
     .navbar #homebutton{
         display: none;
+    }
+
+    .navbar #portfoliobutton, .navbar #contactbutton{
+        width: fit-content;
+    }
+
+    .navbar #contactbutton{
+        margin-right: 10%;
     }
 
     .photo-flex-container {
@@ -348,6 +366,10 @@ footer {
     }
  
     #landing p {
+        font-size: 12px;
+    }
+
+    p {
         font-size: 12px;
     }
 }
