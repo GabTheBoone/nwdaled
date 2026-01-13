@@ -1,3 +1,5 @@
+
+
 @font-face {
     font-family: 'Blanka';
     src: url('fonts/BLANKA-REGULAR.OTF') format('opentype');
@@ -95,6 +97,7 @@ body, html {
 
 /* Landing Section */
 #landing {
+    
     height: 79vh;
     color: white;
     display: flex;
@@ -107,7 +110,7 @@ body, html {
     font-size: 5em;
     font-weight: 900;
     margin-bottom: 10px;
-    font-family: 'Gendy', sans-serif;
+    font-family: 'Blanka', sans-serif;
     letter-spacing: 2px;
 }
 
@@ -294,6 +297,59 @@ footer {
     object-fit: cover;
     border-radius: 10px;
     border: 5px solid #333;
+}
+
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .navbar .nav-buttons {
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .navbar .nav-button {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+    
+    .navbar .nav-logo{
+        font-size: 20px;
+    }
+    .navbar #homebutton{
+        display: none;
+    }
+
+    .photo-flex-container {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 1200px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+
+    h3 {
+        font-size: 1em;
+        margin-bottom: 15px;
+    }
+   
+    #landing h1 {
+        font-size: 3em;
+
+    }
+ 
+    #landing p {
+        font-size: 12px;
+    }
 }
 
 /*.photo-title {
