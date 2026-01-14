@@ -13,9 +13,16 @@
         background-image: url(images/background.jpg); 
     }
 
+    #gallery-mobile {
+        display: none;
+    }
+
     @media (max-width: 768px){
         #landing{
             background-image: url(images/background1.jpg);
+        }
+        #gallery-mobile{
+            display: block;
         }
     }
 </style>
@@ -65,10 +72,11 @@
                 </div>
             </div>
         </nav>
+        <h3 id = 'gallery_title' style="margin-top: 5%; margin-bottom: -5%;">Watercolors</h3>
     </section>
 
     <section id="gallery" class="section" style=" padding-top: 0;">
-        <h3 id = 'gallery_title'>Watercolors</h3>
+        
         <div class="photo-flex-container" id = "acrylics" style="display: none;">
             <div class="photo-column" id="acrylicsc1"></div>
             <div class="photo-column" id="acrylicsc2"></div>
@@ -91,12 +99,10 @@
         </div>
     </section>
 
-    <section id="gallery-mobile" class="section" style=" padding-top: 0;">
-        <h3 id = 'gallery_title'>Watercolors</h3>
+    <section id="gallery-mobile" class="section">
         <div class="photo-flex-container" id = "acrylicsm" style="display: none;">
             <div class="photo-column" id="acrylicsc1m"></div>
             <div class="photo-column" id="acrylicsc2m"></div>
-
         </div>
         <div class="photo-flex-container" id = "watercolorsm">
             <div class="photo-column" id="watercolorsc1m"></div>
@@ -248,9 +254,9 @@ for (let i = 1; i <= acryliccount; i++) {
     img.alt = `Painting ${i}`;
     wrapper.appendChild(img);
     if (i % 2 == 1) {
-        acrylicsc1.appendChild(wrapper);
+        acrylicsc1m.appendChild(wrapper);
     }else {
-        acrylicsc2.appendChild(wrapper);
+        acrylicsc2m.appendChild(wrapper);
     }
 }
 
@@ -320,22 +326,44 @@ function capitalizeFirstLetter(str) {
 }
 
 function myFunction(a) {
+    const w = a + "m";
     var b = capitalizeFirstLetter(a);
     var x = document.getElementById(a);
+    var y = document.getElementById(w);
     var c = document.getElementById("acrylics");
     var d = document.getElementById("watercolors");
     var e = document.getElementById("digital");
     var f = document.getElementById("others");
-    if (x.style.display === "none") {
-        c.style.display = "none";
-        d.style.display = "none";
-        e.style.display = "none";
-        f.style.display = "none";
-        x.style.display = "grid";
-        title.innerText = b;
-        window.location.href = "#portfolio";
+
+    var g = document.getElementById("acrylicsm");
+    var h = document.getElementById("watercolorsm");
+    var i = document.getElementById("digitalm");
+    var j = document.getElementById("othersm");
+    if (window.innerWidth > 768) {
+        if (x.style.display === "none") {
+            c.style.display = "none";
+            d.style.display = "none";
+            e.style.display = "none";
+            f.style.display = "none";
+            x.style.display = "grid";
+            title.innerText = b;
+            window.location.href = "#portfolio";
+        } else {
+            x.style.display = "none";
+        }
     } else {
-        x.style.display = "none";
+        if (y.style.display === "none") {
+            g.style.display = "none";
+            h.style.display = "none";
+            i.style.display = "none";
+            j.style.display = "none";
+            y.style.display = "grid";
+            title.innerText = b;
+            window.location.href = "#portfolio";
+        } else {
+            y.style.display = "none";
+        }
     }
+    
 }
 </script>

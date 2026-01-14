@@ -263,9 +263,6 @@ footer {
 }
 
 /* Section Styling */
-#gallery-mobile {
-    display: none;
-}
 #gallery {
     margin-top: 0;
     margin-bottom: 60px;
@@ -376,10 +373,6 @@ footer {
         font-size: 12px;
     }
 
-    #gallery-mobile {
-        display: block;
-    }
-    
     #gallery {
         display: none;
     }
